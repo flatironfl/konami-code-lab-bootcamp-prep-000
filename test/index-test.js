@@ -4,7 +4,7 @@ describe('index', () => {
   function triggerKeyDown(which) {
     const keyboardEvent = document.createEvent("KeyboardEvent")
 
-    kbdEvent.initKeyboardEvent(
+    keyboardEvent.initKeyboardEvent(
       'keydown',
       true,
       true,
