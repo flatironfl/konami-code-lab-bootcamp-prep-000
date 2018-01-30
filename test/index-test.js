@@ -27,7 +27,6 @@ describe('index', () => {
 
       for (let i = 0, l = code.length; i < l; i++) {
         console.log("triggerKeyDown with " + code[i])
-        window.alert(code[i])
         triggerKeyDown(code[i])
       }
 
