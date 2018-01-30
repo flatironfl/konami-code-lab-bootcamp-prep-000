@@ -1,8 +1,10 @@
-const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+// const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65] - uses deprecated event.which values
+
+const code = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight",  "ArrowLeft", "ArrowRight", "b", "a"]  // use correct event.key values instead of deprecated event.which values
 
 // var keysCaught = [];
 // var konamiCodeEntered = false;
-var correctKeysCounter = 0;  // index into code array and counts # of correct key entries
+var correctKeysCounter = 0;
 
 function init() {
   // Write your JavaScript code inside the init() function
@@ -11,16 +13,17 @@ function init() {
 }
 
 function eventHandler(event) {
-  if (parseInt(event.which) === code[correctKeysCounter]) { // seeing if equal to next key in code
+  // window.alert("event detail is: " + event.detail + "; event which is: " + event.which + "; event location is: " + event.location + "; event key is: " + event.key + "; event char is: " + event.char);
+  if (event.key === code[correctKeysCounter]) { // seeing if equal to next key in code
     correctKeysCounter++;
     if (correctKeysCounter === code.length) {
-        window.alert("Congrats --- you entered the Konami Code correctly.");
+        alert("Congrats --- you entered the Konami Code correctly.");
         correctKeysCounter = 0; // reset to try again
    }
- } else {
-   correctKeysCounter = 0; // wrong key - reset and start looking again
- }
+} else {
+    correctKeysCounter = 0; // reset and start looking again
+}
   //alert("handler called");
 }
 
-//  init();
+init();
