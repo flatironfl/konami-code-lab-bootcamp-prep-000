@@ -13,7 +13,7 @@ function init() {
 }
 
 function eventHandler(event) {
-  // window.alert("event detail is: " + event.detail + "; event which is: " + event.which + "; event location is: " + event.location + "; event key is: " + event.key + "; event char is: " + event.char);
+  console.log("event detail is: " + event.detail + "; event which is: " + event.which + "; event location is: " + event.location + "; event key is: " + event.key + "; event char is: " + event.char);
   if (event.key === code[correctKeysCounter]) { // seeing if equal to next key in code
     correctKeysCounter++;
     if (correctKeysCounter === code.length) {
